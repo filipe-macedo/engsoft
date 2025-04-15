@@ -1,22 +1,17 @@
-class Empresa:
-    pilares = []
-    nome = "Turma 34"
-    funcionarios = []
+from empresa import Empresa
 
-    def cadastrar_pilar(self, nome, descricao):
-        self.pilares.append((nome, descricao))
+empresa = Empresa("Turma 34")
 
-    def consultar_pilares(self):
-        for p in self.pilares:
-            print(f"Pilar:{p[0]}, Descrição:{p[1]}")
+empresa.cadastrar_pilar("Ética", "Agir de forma correta")
+empresa.cadastrar_pilar("Transparência", "Comunicação clara e aberta")
 
-    def cadastrar_funcionarios(self, nome, salario):
-        self.funcionarios.append((nome, salario))
 
-    def consultar_funcionarios(self):
-        for f in self.funcionarios:
-            print(f"Funcionário:{f[0]}, Salário:{f[1]}")
+empresa.cadastrar_funcionario("Ana", 4200)
+empresa.cadastrar_funcionario("Carlos", 3500)
 
-emp = Empresa()
-emp.cadastrar_pilar("Ética", "Agir eticamente")
-emp.consultar_pilares()
+
+print("PILARES:")
+empresa.consultar_pilares()
+
+print("\nFUNCIONÁRIOS:")
+empresa.consultar_funcionarios()
